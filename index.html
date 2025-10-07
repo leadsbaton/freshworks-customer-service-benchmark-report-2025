@@ -41,14 +41,14 @@
     <header class="fixed top-0 left-0 w-full z-50 bg-white flex justify-between items-center p-4 sm:p-6 shadow-md">
         <img src="assets/img/headerLogoLight.webp" alt="Freshworks Logo" class="h-8 sm:h-10">
     </header>
+    <!--  full width -->
+    <section class="w-full bg-white-100 pt-32 pb-16 lg:pt-40 lg:pb-24">
+        <div class="max-w-[1400px] mx-auto ">
+            <div class="grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden">
 
-    <section class="bg-white pt-24 pb-16 lg:pt-32 lg:pb-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-0 items-stretch s  overflow-hidden">
-
-                <div class="p-6 sm:p-10 lg:p-12 space-y-8 bg-green-200 order-2 lg:order-1 flex flex-col justify-center">
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                        Data-backed insights from<br>1.2 billion support tickets
+                <div class="p-6 sm:p-10 lg:p-12 space-y-8 bg-green-200 order-1 lg:order-1 flex flex-col justify-center">
+                    <h2 class="text-2xl sm:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight">
+                        Data-backed insights from 1.2 billion support tickets
                     </h2>
 
                     <p class="text-lg text-gray-800">
@@ -69,9 +69,9 @@
                     </div>
                 </div>
 
-                <div id="heroFormContainer" class="p-6 sm:p-10 lg:p-12 bg-mint-green order-1 lg:order-2">
+                <div id="heroFormContainer" class="p-6 sm:p-10 lg:p-12 bg-mint-green order-2 lg:order-2">
                     <form id="heroForm" class="space-y-4">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class=" mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
                                 <label for="firstName" class="block text-sm font-medium text-gray-700">First Name<span
                                         class="text-red-500">*</span></label>
@@ -120,10 +120,9 @@
                             <input type="text" id="country" name="country" required
                                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600">
                         </div>
-                        <!-- check box with same line -->
-                        <div class="flex items-start pt-2">
-                            <label for="privacyConsent" class="text-xs text-gray-700 leading-relaxed">
-
+                        <div class="pt-2">
+                            <label for="privacyConsent" class="flex items-start text-xs text-gray-700 leading-relaxed">
+                                <input type="checkbox" id="privacyConsent" name="privacyConsent" class="mr-2 mt-0.5">
                                 By supplying my contact information, I accept the Freshworks <a
                                     href="https://www.freshworks.com/terms/" target="_blank"
                                     class="text-violet-600 hover:underline">Terms of Service</a> and <a
@@ -131,7 +130,6 @@
                                     class="text-violet-600 hover:underline">Privacy Notice</a>.
                             </label>
                         </div>
-
                         <input type="hidden" name="timestamp" id="timestamp">
 
                         <button type="submit" id="submitBtn"
@@ -144,17 +142,15 @@
         </div>
     </section>
 
-
     <section class="py-16 lg:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">
                 Why you should read this report:
             </h2>
 
             <div class="grid md:grid-cols-3 gap-10 text-left">
                 <div class="space-y-4">
-                    <img src="assets/img/image32c.png" alt="Chart Icon"
-                        class="w-16 h-16 object-contain mb-4 mx-auto md:mx-0">
+                    <img src="assets/img/image32c.png" alt="Chart Icon" class="w-16 h-16 object-contain mb-4 md:mx-0">
                     <p class="text-gray-900 font-semibold leading-relaxed">
                         Know where you stand: Are you a <span class="font-bold">Trendsetter, Performer, or
                             Aspirant</span>? Learn what it takes to move up.
@@ -162,8 +158,7 @@
                 </div>
 
                 <div class="space-y-4">
-                    <img src="assets/img/image32d.png" alt="AI Gear Icon"
-                        class="w-16 h-16 object-contain mb-4 mx-auto md:mx-0">
+                    <img src="assets/img/image32d.png" alt="AI Gear Icon" class="w-16 h-16 object-contain mb-4 md:mx-0">
                     <p class="text-gray-900 font-semibold leading-relaxed">
                         See what's working: Find out how <span class="font-bold">AI-powered teams</span> are cutting
                         resolution times from <span class="font-bold">32 hours to just 32 minutes</span>.
@@ -172,7 +167,7 @@
 
                 <div class="space-y-4">
                     <img src="assets/img/image32e.png" alt="Chat Bubble Icon"
-                        class="w-16 h-16 object-contain mb-4 mx-auto md:mx-0">
+                        class="w-16 h-16 object-contain mb-4 md:mx-0">
                     <p class="text-gray-900 font-semibold leading-relaxed">
                         Unlock the new playbook: Discover the channels, workflows, and <span class="font-bold">AI
                             strategies</span> that are driving <span class="font-bold">99% CSAT</span>.
@@ -180,9 +175,8 @@
                 </div>
             </div>
 
-            <div class="max-w-4xl mx-auto pt-20">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                    <!-- text alignment left -->
+            <div class="max-w-7xl mx-auto pt-20">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                     <div class="space-y-6 text-left">
                         <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
                             Drawing from <span class="font-bold">32,000+ companies and 1.2 billion interactions</span>,
@@ -213,8 +207,6 @@
             </div>
         </div>
     </section>
-
-
     <footer class="bg-black text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center space-y-2">
@@ -301,8 +293,9 @@
                     const companyName = document.getElementById("companyName").value.trim();
                     const organizationSize = document.getElementById("organizationSize").value;
                     const country = document.getElementById("country").value.trim();
+                    // const privacyConsent = document.getElementById("privacyConsent").checked; // Removed check as requested
 
-                    // Simple validation checks (Privacy checkbox removed as it's not a required field in the final form)
+                    // Simple validation checks
                     if (!firstName || !lastName || !businessEmail || !companyName || !organizationSize || !country) {
                         showDialog("Please fill in all required fields.", false);
                         return;
