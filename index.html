@@ -4,572 +4,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scale Business IT Smarter - Tech Report</title>
-    <meta name="description" content="A detailed analysis of the impact of AI and key customer service metrics">
+    <title>The Customer Service Benchmark Report 2025 - Freshworks</title>
+    <meta name="description"
+        content="Data-backed insights from 1.2 billion support tickets. Benchmark your performance and set new goals with the Customer Service Benchmark Report 2025.">
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts for 'Inter' -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- EmailJS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
-        /* Custom styles for modal backdrop */
-        .modal-backdrop {
-            backdrop-filter: blur(4px);
+        /* Custom styles for 'Inter' font throughout the body */
+        body {
+            font-family: 'Inter', sans-serif;
         }
 
-        /* Hide modal by default */
-        .modal {
-            display: none;
+        /* Custom color for the hero left column */
+        .bg-mint-green {
+            background-color: #E8F7F0;
         }
 
-        /* Show modal when active */
-        .modal.active {
-            display: flex;
+        /* Custom style for the submit button to ensure consistent purple/violet */
+        .btn-primary {
+            background-color: #8B5CF6;
+            /* Violet 600 */
         }
 
-        /* Custom gradient for hero section */
-        .hero-gradient {
-            background: linear-gradient(135deg, #eff6ff 0%, #f3e8ff 100%);
-        }
-
-        /* Custom styles for the circular stats borders */
-        .stat-circle-border {
-            border: 4px solid #3b82f6;
-            /* Tailwind blue-600 */
-        }
-
-        /* Custom styles for the recognition section elements */
-        .recognition-top100 {
-            background-color: #dc2626;
-            /* Tailwind red-600 */
-        }
-
-        .recognition-k-circle {
-            background-color: #3b82f6;
-            /* Tailwind blue-600 */
+        .btn-primary:hover {
+            background-color: #7C3AED;
+            /* Violet 700 */
         }
     </style>
 </head>
 
-<body class="font-sans antialiased">
+<body class="antialiased">
 
-    <!-- Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-white flex justify-between items-center p-6">
-        <img src="assets/img/headerLogoLight.webp" alt="Header Logo" class="h-10">
+    <header class="fixed top-0 left-0 w-full z-50 bg-white flex justify-between items-center p-4 sm:p-6 shadow-md">
+        <img src="assets/img/headerLogoLight.webp" alt="Freshworks Logo" class="h-8 sm:h-10">
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-[#E6F5FF] py-16 lg:py-24 mt-9">
+    <section class="bg-white pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="grid lg:grid-cols-2 gap-0 items-stretch s rounded-lg overflow-hidden">
 
-                <!-- Left Content: Text -->
-                <div class="order-1 lg:order-1 space-y-8 text-center lg:text-left">
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
-                        Uncomplicate IT:<br>
-                        Scale smarter, not harder,<br>
-                        with the Lean EX guide<br>
-                        for small business IT
-                    </h1>
-                </div>
+                <div
+                    class="p-6 sm:p-10 lg:p-12 space-y-8 bg-green-200 order-2 lg:order-1 flex flex-col justify-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                        Data-backed insights from<br>1.2 billion support tickets
+                    </h2>
 
-                <!-- Right Content: Image -->
-                <div class="order-2 lg:order-2 flex justify-center lg:justify-end">
-                    <div class="relative max-w-md lg:max-w-lg w-full">
-                        <img src="assets/img/scale_business_it_image.png" alt="Scale business IT smarter report cover"
-                            class="w-full h-auto rounded-lg">
+                    <p class="text-lg text-gray-800">
+                        Customer expectations are at an all-time high and traditional support models are falling short.
+                        Long wait times and disconnected tools aren't just inefficiencies, they're deal-breakers. In
+                        2025,
+                        leading brands are embracing <span class="font-bold">AI and people-first strategies</span> to
+                        deliver faster, smarter
+                        support at scale.
+                    </p>
+
+                    <p class="text-lg text-gray-800">
+                        The Customer Service Benchmark Report 2025 is your guide to navigating this shift.
+                    </p>
+
+                    <div class="pt-4 flex items-end space-x-6">
+                        <img src="assets/img/image32a.png" alt="The Customer Service Benchmark Report 2025 cover">
                     </div>
                 </div>
 
-                <!-- Download Button: only mobile goes last -->
-                <div class="order-3 lg:order-2 flex justify-center lg:justify-start">
-                    <button id="heroDownloadBtn" onclick="openModal()"
-                        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md w-full sm:w-auto">
-                        Download Now
-                    </button>
-                </div>
+                <div id="heroFormContainer" class="p-6 sm:p-10 lg:p-12 bg-mint-green order-1 lg:order-2">
+                    <form id="heroForm" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700">First Name<span
+                                        class="text-red-500">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700">Last Name<span
+                                        class="text-red-500">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required
+                                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600">
+                            </div>
+                        </div>
 
+                        <div>
+                            <label for="businessEmail" class="block text-sm font-medium text-gray-700">Business
+                                Email<span class="text-red-500">*</span></label>
+                            <input type="email" id="businessEmail" name="businessEmail" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600">
+                        </div>
+
+                        <div>
+                            <label for="companyName" class="block text-sm font-medium text-gray-700">Company Name<span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" id="companyName" name="companyName" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600">
+                        </div>
+
+                        <div>
+                            <label for="organizationSize" class="block text-sm font-medium text-gray-700">Organization
+                                Size<span class="text-red-500">*</span></label>
+                            <select id="organizationSize" name="organizationSize" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600 bg-white">
+                                <option value="" disabled selected>Select size</option>
+                                <option value="1-50">1-50 employees</option>
+                                <option value="51-200">51-200 employees</option>
+                                <option value="201-500">201-500 employees</option>
+                                <option value="501-1000">501-1000 employees</option>
+                                <option value="1000+">1000+ employees</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="country" class="block text-sm font-medium text-gray-700">Country<span
+                                    class="text-red-500">*</span></label>
+                            <input type="text" id="country" name="country" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600">
+                        </div>
+
+                        <div class="flex items-start pt-2">
+                            <label for="privacyConsent" class="text-xs text-gray-700 leading-relaxed">
+                                By supplying my contact information, I accept the Freshworks <a
+                                    href="https://www.freshworks.com/terms/" target="_blank"
+                                    class="text-violet-600 hover:underline">Terms of Service</a> and <a
+                                    href="https://www.freshworks.com/privacy/" target="_blank"
+                                    class="text-violet-600 hover:underline">Privacy Notice</a>.
+                            </label>
+                        </div>
+
+                        <input type="hidden" name="timestamp" id="timestamp">
+
+                        <button type="submit" id="submitBtn"
+                            class="w-full btn-primary hover:bg-violet-700 text-white py-3 text-lg font-semibold rounded-md transition duration-300 shadow-lg mt-6">
+                            Submit
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
 
-
-
-    <!-- Content Section -->
     <section class="py-16 lg:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Left Image -->
-                <div class="flex justify-center lg:justify-start order-2 lg:order-1">
-                    <div class="relative max-w-md lg:max-w-lg">
-                        <img src="assets/img/image_whats_inside.png" alt="Person with IT automation illustration"
-                            class="w-full h-auto rounded-lg">
-                    </div>
-                </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">
+                Why you should read this report:
+            </h2>
 
-                <!-- Right Content -->
-                <div class="space-y-6 order-1 lg:order-2">
-                    <div class="space-y-4">
-                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
-                            Learn 5 proven ways SMBs deliver top-tier employee experiences on a lean budget.
-                        </h2>
-                        <p class="text-gray-600 leading-relaxed">
-                            Small and medium businesses face immense pressure to deliver seamless, consumer-like
-                            workplace experiences
-                            while grappling with everyday complexities: limited IT budgets, fragmented tools, and manual
-                            processes that
-                            hinder scalability. This can make sustainable growth feel like an uphill battle. But what if
-                            you could
-                            transform your IT operations from a cost center into a strategic engine for growth, all
-                            while enhancing
-                            employee satisfaction and optimizing costs?
-                        </p>
-                        <p class="text-gray-900 font-semibold">In this guide, you will discover how to:</p>
-                    </div>
-                    <div class="space-y-4">
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">1.</span> Simplify IT operations
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                Discover how intuitive, user-friendly IT platforms reduce complexity, increase adoption,
-                                and boost team productivity from day one.
-                            </p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">2.</span> Automate to move faster
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                See how no-code automation and AI-powered tools eliminate repetitive tasks, speed up
-                                resolution times, and allow your IT team to focus on strategic work.
-                            </p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">3.</span> Optimize spend and resources
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                Learn to evaluate IT solutions with flexible pricing models, make smarter resource
-                                decisions, and ensure compliance—without compromising performance.
-                            </p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">4.</span> Leverage AI to amplify IT impact
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                Go beyond basic automation with predictive analytics, intelligent support, threat
-                                detection, and performance optimization.
-                            </p>
-                        </div>
-                        <div class="space-y-2">
-                            <p class="font-semibold text-gray-900">
-                                <span class="text-blue-600 font-bold">5.</span> Scale with confidence
-                            </p>
-                            <p class="text-gray-600 ml-4">
-                                Build a future-ready IT foundation with robust asset management, proactive maintenance,
-                                and advanced operations control to support sustainable growth.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Statistics Section -->
-    <section class="py-16 lg:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-12">
-                <div class="space-y-6">
-                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Did you know?</h2>
-                    <p class="text-xl text-gray-700 max-w-4xl mx-auto">
-                        The biggest outcomes seen with AI and IT modernization, based on real-world use cases:
+            <div class="grid md:grid-cols-3 gap-10 text-left">
+                <div class="space-y-4">
+                    <img src="assets/img/image32c.png" alt="Chart Icon"
+                        class="w-16 h-16 object-contain mb-4 mx-auto md:mx-0">
+                    <p class="text-gray-900 font-semibold leading-relaxed">
+                        Know where you stand: Are you a <span class="font-bold">Trendsetter, Performer, or
+                            Aspirant</span>? Learn what it takes to move up.
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
-                    <div class="text-center space-y-4">
-                        <div
-                            class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
-                            <span class="text-3xl font-bold text-blue-600">25%</span>
-                        </div>
-                        <p class="text-gray-900 font-semibold max-w-xs mx-auto">
-                            Improved resolution time at Village Roadshow after adopting Freshservice
-                        </p>
-                    </div>
+                <div class="space-y-4">
+                    <img src="assets/img/image32d.png" alt="AI Gear Icon"
+                        class="w-16 h-16 object-contain mb-4 mx-auto md:mx-0">
+                    <p class="text-gray-900 font-semibold leading-relaxed">
+                        See what's working: Find out how <span class="font-bold">AI-powered teams</span> are cutting
+                        resolution times from <span class="font-bold">32 hours to just 32 minutes</span>.
+                    </p>
+                </div>
 
-                    <div class="text-center space-y-4">
-                        <div
-                            class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
-                            <span class="text-3xl font-bold text-blue-600">60%</span>
-                        </div>
-                        <p class="text-gray-900 font-semibold max-w-xs mx-auto">
-                            Reduction in annual IT costs achieved through automation and smarter tools
-                        </p>
-                    </div>
-
-                    <div class="text-center space-y-4">
-                        <div
-                            class="mx-auto w-32 h-32 rounded-full stat-circle-border flex items-center justify-center bg-white">
-                            <span class="text-3xl font-bold text-blue-600">36%</span>
-                        </div>
-                        <p class="text-gray-900 font-semibold max-w-xs mx-auto">
-                            Of organizations have already adopted generative AI in IT — the highest across all business
-                            functions
-                        </p>
-                    </div>
+                <div class="space-y-4">
+                    <img src="assets/img/image32e.png" alt="Chat Bubble Icon"
+                        class="w-16 h-16 object-contain mb-4 mx-auto md:mx-0">
+                    <p class="text-gray-900 font-semibold leading-relaxed">
+                        Unlock the new playbook: Discover the channels, workflows, and <span class="font-bold">AI
+                            strategies</span> that are driving <span class="font-bold">99% CSAT</span>.
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Industry Recognition Section -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-8">
-                <h3 class="text-2xl font-bold text-gray-900">Recommended by leading industry experts</h3>
-                <div class="flex justify-center items-center gap-8 lg:gap-16 flex-wrap">
-                    <!-- Using image assets as per your previous request -->
-                    <img src="assets/img/gartner.webp" alt="Gartner" class="h-12 w-auto object-contain">
-                    <img src="assets/img/G2-Best-software-award-2023.webp" alt="Top 100 Software Products"
-                        class="h-12 w-auto object-contain">
-                    <img src="assets/img/Forrester-Accolade-220x240.webp" alt="Forrester"
-                        class="h-12 w-auto object-contain">
-                    <img src="assets/img/TopRated.webp" alt="Top Rated 2021" class="h-12 w-auto object-contain">
+            <div class="max-w-4xl mx-auto pt-20">
+                <div class="flex justify-center mb-12">
+                    <img src="assets/img/image32f.png"
+                        alt="Customer Service Performance Matrix pyramid: Aspirants, Performers, Trendsetters"
+                        class="w-full max-w-sm h-auto object-contain">
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Final CTA Section -->
-    <section class="py-16 lg:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center space-y-8 max-w-4xl mx-auto">
-                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
-                    Ready to discover the keys to transforming your IT operations for maximum impact?
-                </h2>
-                <p class="text-lg text-gray-700 leading-relaxed">
-                    Village Roadshow used Freshservice to scale its IT operations efficiently, achieving a 25%
-                    improvement in resolution time while saving on 50% of annual IT costs. Freshservice demonstrably
-                    scaled to manage over 2,000 IT tickets monthly, a significant improvement over the previous system,
-                    showcasing its ability to handle growing support needs.
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                    Drawing from <span class="font-bold">32,000+ companies and 1.2 billion interactions</span>, it
+                    introduces the Customer
+                    Service Performance Matrix—a clear framework to benchmark your performance and identify areas to
+                    improve.
                 </p>
-                <button id="bottomDownloadBtn" onclick="openModal()"
-                    class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-lg transition-colors duration-200 shadow-md transform hover:scale-105">
-                    Download Now
-                </button>
+                <p class="text-lg md:text-xl text-gray-700 leading-relaxed font-bold">
+                    Whether you're scaling fast or leveling up a mature team, this report is your roadmap to delivering
+                    exceptional,
+                    efficient customer service in 2025 and beyond.
+                    <a href="#heroFormContainer" class="text-violet-600 hover:text-violet-700 hover:underline">Download
+                        now!</a>
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+
     <footer class="bg-black text-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center space-y-2">
-                <p class="text-gray-300">Privacy Policy</p>
-                <p class="text-gray-400">© 2025 Tech IQ Papers, All Rights Reserved</p>
+                <p class="text-gray-300">
+                    <a href="https://www.freshworks.com/privacy/" target="_blank" class="hover:text-white">Privacy
+                        Policy</a> |
+                    <a href="https://www.freshworks.com/terms/" target="_blank" class="hover:text-white">Terms of
+                        Service</a>
+                </p>
+                <p class="text-gray-400">© 2025 Freshworks Inc. All Rights Reserved</p>
             </div>
         </div>
     </footer>
 
-    <!-- Download Modal -->
-    <div id="downloadModal"
-        class="modal fixed inset-0 bg-black bg-opacity-50 modal-backdrop z-50 items-center justify-center p-4 hidden">
-        <div class="bg-white rounded-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
-            <div class="p-6">
-                <div class="flex justify-between items-start mb-6">
-                    <h2 class="text-xl font-semibold text-gray-900 leading-snug">
-                        Uncomplicate IT: Scale smarter, not harder,<br>
-                        with the Lean EX guide for small business IT
-                    </h2>
-                    <button onclick="closeModal()"
-                        class="text-gray-400 hover:text-gray-600 text-2xl font-bold -mt-1">×</button>
-                </div>
 
-                <form id="downloadForm" class="space-y-4">
-                    <div>
-                        <label for="fullName" class="block text-sm font-medium text-gray-700">Full name<span
-                                class="text-red-500">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
-                    </div>
-
-                    <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone number<span
-                                class="text-red-500">*</span></label>
-                        <input type="tel" id="phone" name="phone" required
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600">
-                    </div>
-
-                    <div class="flex items-start mt-2">
-                        <input type="checkbox" id="privacyConsent" name="privacyConsent" required
-                            class="mt-1 mr-2 h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-600">
-                        <label for="privacyConsent" class="text-sm text-gray-700 leading-relaxed">
-                            by clicking "Download Now", I understand that Freshworks will process my personal
-                            information in accordance with its privacy notice and consent to receiving marketing
-                            communications related to Freshworks' business, services, and events. I can unsubscribe from
-                            these communications at any time.
-                        </label>
-                    </div>
-
-                    <input type="hidden" name="timestamp" id="timestamp">
-
-                    <button type="submit" id="submitBtn"
-                        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold rounded-md transition duration-300">
-                        Download Now
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- <script>
-
+    <script>
+        // EmailJS Configuration (Using your provided keys)
         const EMAIL_SERVICE_ID = "service_z09fuxl";
         const EMAIL_TEMPLATE_ID = "template_7jmqb59";
         const EMAIL_PUBLIC_KEY = "I64IeI2zG_00GsyoX";
-        // PDF Download Link
-        const PDF_DOWNLOAD_URL = "https://leadsbaton.github.io/Scale-business-IT-smarter/assets/pdf/Scaling_Smarter_Playbook_FINAL.pdf";
+        // Final URL for the PDF download (Opens after successful form submission)
+        const URL = "https://company-assets.freshworks.com/marketing/freshdesk/Customer-Service-Benchmark-Report-2025.pdf?ehash=9e6571886e5fd0569388c1318b784065c0616a831d6c4a390d29a00cfa9090d6";
 
         document.addEventListener('DOMContentLoaded', function () {
-            console.log("DOMContentLoaded fired. Script is running.");
-
             // Initialize EmailJS
             emailjs.init(EMAIL_PUBLIC_KEY);
-            console.log("EmailJS initialized with public key:", EMAIL_PUBLIC_KEY);
 
-            // Get elements
-            const downloadModal = document.getElementById('downloadModal');
-            const downloadForm = document.getElementById('downloadForm');
+            const heroForm = document.getElementById('heroForm');
             const timestampInput = document.getElementById('timestamp');
             const submitBtn = document.getElementById('submitBtn');
-            const privacyConsentCheckbox = document.getElementById('privacyConsent');
 
-            // Log elements to confirm they are found
-            console.log("Elements found:");
-            console.log("downloadModal:", downloadModal);
-            console.log("downloadForm:", downloadForm);
-            console.log("submitBtn:", submitBtn);
-            console.log("privacyConsentCheckbox:", privacyConsentCheckbox);
-
-            /**
-             * Shows a temporary message dialog.
-             * @param {string} message - The message to display.
-             * @param {boolean} isSuccess - True for a success message (green), false for an error (red).
-             */
+            // Helper to display a temporary notification message
             const showDialog = (message, isSuccess = true) => {
                 const dialog = document.createElement("div");
-                dialog.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300 transform translate-x-full opacity-0 ${isSuccess ? 'bg-green-600 text-white' : 'bg-red-600 text-white'}`;
-                dialog.innerText = message;
-                document.body.appendChild(dialog);
-
-                setTimeout(() => {
-                    dialog.classList.remove('translate-x-full', 'opacity-0');
-                    dialog.classList.add('translate-x-0', 'opacity-100');
-                }, 10);
-
-                setTimeout(() => {
-                    dialog.classList.remove('translate-x-0', 'opacity-100');
-                    dialog.classList.add('translate-x-full', 'opacity-0');
-                    setTimeout(() => dialog.remove(), 300);
-                }, 3000);
-            };
-
-            /**
-             * Custom confirmation dialog (replaces window.confirm).
-             * @param {string} message - The confirmation message.
-             * @returns {Promise<boolean>} - Resolves true if OK, false if Cancel.
-             */
-            const customConfirm = (message) => {
-                return new Promise(resolve => {
-                    const confirmationDialog = document.createElement("div");
-                    confirmationDialog.className = "fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center p-4 z-[9999]";
-                    confirmationDialog.innerHTML = `
-                        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md relative">
-                            <h4 class="text-lg font-bold mb-4">Confirm Details</h4>
-                            <p class="mb-4">${message}</p>
-                            <div class="flex justify-end space-x-4">
-                                <button id="cancelConfirm" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-300">Cancel</button>
-                                <button id="okConfirm" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">OK</button>
-                            </div>
-                        </div>
-                    `;
-                    document.body.appendChild(confirmationDialog);
-
-                    document.getElementById('okConfirm').addEventListener('click', () => {
-                        confirmationDialog.remove();
-                        resolve(true);
-                    });
-                    document.getElementById('cancelConfirm').addEventListener('click', () => {
-                        confirmationDialog.remove();
-                        resolve(false);
-                    });
-                });
-            };
-
-            // Event listener for closing modal by clicking outside
-            if (downloadModal) {
-                downloadModal.addEventListener('click', function (event) {
-                    if (event.target === this) {
-                        closeModal();
-                    }
-                });
-            }
-
-            // Event listener for closing modal with Escape key
-            document.addEventListener('keydown', function (event) {
-                if (event.key === 'Escape') {
-                    closeModal();
-                }
-            });
-
-            // Form Submission Handler
-            if (downloadForm) {
-                downloadForm.addEventListener('submit', async function (e) {
-                    e.preventDefault();
-                    console.log("Form submitted.");
-
-                    // Get input values
-                    const firstName = document.getElementById("firstName").value.trim();
-                    const lastName = document.getElementById("lastName").value.trim();
-                    const company = document.getElementById("companyName").value.trim();
-                    const jobTitle = document.getElementById("jobTitle").value.trim();
-                    const companyEmail = document.getElementById("companyEmail").value.trim(); // Changed from 'email'
-                    const phone = document.getElementById("phone").value.trim(); // Changed from 'phone'
-
-                    // Validation
-                    const isValidEmail = /\S+@\S+\.\S+/.test(companyEmail);
-                    const isValidPhone = /^[0-9]{10,11}$/.test(phone);
-
-                    if (!firstName || !lastName || !company || !jobTitle || !companyEmail || !phone) {
-                        showDialog("Please fill in all required fields.", false);
-                        return;
-                    }
-                    if (!isValidEmail) {
-                        showDialog("Invalid email address format.", false);
-                        return;
-                    }
-                    if (!isValidPhone) {
-                        showDialog("Phone number must be 10 or 11 digits.", false);
-                        return;
-                    }
-                    if (!privacyConsentCheckbox.checked) {
-                        showDialog("Please agree to the privacy notice to download the report.", false);
-                        return;
-                    }
-
-                    const confirmationMessage = `Please confirm your details:\n\n` +
-                        `First Name: ${firstName}\n` +
-                        `Last Name: ${lastName}\n` +
-                        `Company: ${company}\n` +
-                        `Job Title: ${jobTitle}\n` +
-                        `Email: ${companyEmail}\n` +
-                        `Phone: ${phone}\n\n` +
-                        `Click OK to proceed.`;
-
-                    const confirmed = await customConfirm(confirmationMessage);
-                    if (!confirmed) {
-                        console.log("User cancelled confirmation.");
-                        return;
-                    }
-
-                    // Set timestamp
-                    const now = new Date();
-                    timestampInput.value = now.toLocaleString();
-                    console.log("Timestamp set:", timestampInput.value);
-
-                    // Show loading state
-                    if (submitBtn) {
-                        submitBtn.disabled = true;
-                        const originalText = submitBtn.innerHTML;
-                        submitBtn.innerHTML = `<svg class="animate-spin h-5 w-5 text-white inline mr-2" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>Sending...`;
-
-                        try {
-                            // Send email via EmailJS
-                            console.log("Attempting to send email via EmailJS...");
-                            await emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, this); // 'this' refers to the form element
-                            showDialog("Message sent successfully! Your download will begin shortly.");
-                            console.log("Email sent successfully.");
-
-                            // Reset form and close modal
-                            downloadForm.reset();
-                            privacyConsentCheckbox.checked = false;
-                            closeModal();
-                            console.log("Form reset and modal closed.");
-
-                            // Trigger PDF download
-                            const link = document.createElement("a");
-                            link.href = PDF_DOWNLOAD_URL;
-                            link.download = "Future_Proof_IT_5_Pillars.pdf";
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                            console.log("PDF download triggered.");
-
-                        } catch (error) {
-                            console.error("EmailJS Error:", error);
-                            showDialog("Failed to send message. Please try again.", false);
-                        } finally {
-                            // Restore button state
-                            submitBtn.disabled = false;
-                            submitBtn.innerHTML = originalText;
-                        }
-                    }
-                });
-            } else {
-                console.warn("Download form (downloadForm) not found.");
-            }
-        });
-
-        // Global functions for onclick attributes
-        function openModal() {
-            const downloadModal = document.getElementById('downloadModal');
-            if (downloadModal) {
-                downloadModal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                console.log("Modal opened.");
-            } else {
-                console.error("downloadModal element not found in openModal function.");
-            }
-        }
-
-        function closeModal() {
-            const downloadModal = document.getElementById('downloadModal');
-            if (downloadModal) {
-                downloadModal.classList.remove('active');
-                document.body.style.overflow = ''; // Restore background scrolling
-                console.log("Modal closed.");
-            } else {
-                console.error("downloadModal element not found in closeModal function.");
-            }
-        }
-    </script> -->
-    <script>
-        const EMAIL_SERVICE_ID = "service_z09fuxl";
-        const EMAIL_TEMPLATE_ID = "template_7jmqb59";
-        const EMAIL_PUBLIC_KEY = "I64IeI2zG_00GsyoX";
-        const PDF_DOWNLOAD_URL = "https://leadsbaton.github.io/Scale-business-IT-smarter/assets/pdf/Scaling_Smarter_Playbook_FINAL.pdf";
-
-        document.addEventListener('DOMContentLoaded', function () {
-            emailjs.init(EMAIL_PUBLIC_KEY);
-
-            const downloadModal = document.getElementById('downloadModal');
-            const downloadForm = document.getElementById('downloadForm');
-            const timestampInput = document.getElementById('timestamp');
-            const submitBtn = document.getElementById('submitBtn');
-            const privacyConsentCheckbox = document.getElementById('privacyConsent');
-
-            const showDialog = (message, isSuccess = true) => {
-                const dialog = document.createElement("div");
-                dialog.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 transition-all duration-300 transform translate-x-full opacity-0 ${isSuccess ? 'bg-green-600 text-white' : 'bg-red-600 text-white'}`;
+                dialog.className = `fixed top-4 right-4 px-6 py-3 rounded-lg shadow-xl z-50 transition-all duration-300 transform translate-x-full opacity-0 ${isSuccess ? 'bg-green-600 text-white' : 'bg-red-600 text-white'}`;
                 dialog.innerText = message;
                 document.body.appendChild(dialog);
                 setTimeout(() => {
@@ -583,17 +253,18 @@
                 }, 3000);
             };
 
+            // Custom Confirm Dialog for B2B lead confirmation
             const customConfirm = (message) => {
                 return new Promise(resolve => {
                     const confirmationDialog = document.createElement("div");
                     confirmationDialog.className = "fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center p-4 z-[9999]";
                     confirmationDialog.innerHTML = `
                     <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md relative">
-                        <h4 class="text-lg font-bold mb-4">Confirm Details</h4>
-                        <p class="mb-4 whitespace-pre-line">${message}</p>
+                        <h4 class="text-lg font-bold mb-4 text-gray-900">Confirm Details</h4>
+                        <p class="mb-4 whitespace-pre-line text-gray-700">${message}</p>
                         <div class="flex justify-end space-x-4">
                             <button id="cancelConfirm" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-lg transition duration-300">Cancel</button>
-                            <button id="okConfirm" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">OK</button>
+                            <button id="okConfirm" class="btn-primary hover:bg-violet-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">OK</button>
                         </div>
                     </div>
                 `;
@@ -609,31 +280,32 @@
                 });
             };
 
-            if (downloadForm) {
-                downloadForm.addEventListener('submit', async function (e) {
+            if (heroForm) {
+                heroForm.addEventListener('submit', async function (e) {
                     e.preventDefault();
 
-                    const fullName = document.getElementById("fullName").value.trim();
-                    const phone = document.getElementById("phone").value.trim();
+                    // Get values
+                    const firstName = document.getElementById("firstName").value.trim();
+                    const lastName = document.getElementById("lastName").value.trim();
+                    const businessEmail = document.getElementById("businessEmail").value.trim();
+                    const companyName = document.getElementById("companyName").value.trim();
+                    const organizationSize = document.getElementById("organizationSize").value;
+                    const country = document.getElementById("country").value.trim();
 
-                    const isValidPhone = /^[0-9]{10,11}$/.test(phone);
-
-                    if (!fullName || !phone) {
+                    // Simple validation checks (Privacy checkbox removed as it's not a required field in the final form)
+                    if (!firstName || !lastName || !businessEmail || !companyName || !organizationSize || !country) {
                         showDialog("Please fill in all required fields.", false);
                         return;
                     }
 
-                    if (!isValidPhone) {
-                        showDialog("Phone number must be 10 or 11 digits.", false);
+                    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(businessEmail);
+                    if (!isValidEmail) {
+                        showDialog("Please enter a valid business email address.", false);
                         return;
                     }
 
-                    if (!privacyConsentCheckbox.checked) {
-                        showDialog("Please agree to the privacy notice to proceed.", false);
-                        return;
-                    }
 
-                    const confirmationMessage = `Please confirm your details:\n\nFull Name: ${fullName}\nPhone: ${phone}`;
+                    const confirmationMessage = `Please confirm your details:\n\nFull Name: ${firstName} ${lastName}\nBusiness Email: ${businessEmail}\nCompany: ${companyName}`;
 
                     const confirmed = await customConfirm(confirmationMessage);
                     if (!confirmed) return;
@@ -644,21 +316,20 @@
                     // Loading state
                     submitBtn.disabled = true;
                     const originalText = submitBtn.innerHTML;
-                    submitBtn.innerHTML = `<svg class="animate-spin h-5 w-5 text-white inline mr-2" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>Sending...`;
+                    submitBtn.innerHTML = `<svg class="animate-spin h-5 w-5 text-white inline mr-2" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path></svg>Submitting...`;
 
                     try {
-                        await emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, downloadForm);
+                        // Send form data via EmailJS (template_7jmqb59)
+                        await emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, heroForm);
                         showDialog("Success! Your download will begin shortly.");
 
-                        // Reset & Close
-                        downloadForm.reset();
-                        privacyConsentCheckbox.checked = false;
-                        closeModal();
+                        // Reset form
+                        heroForm.reset();
 
                         // Trigger Download
                         const link = document.createElement("a");
-                        link.href = PDF_DOWNLOAD_URL;
-                        link.download = "Scaling_Smarter_Playbook_FINAL.pdf";
+                        link.href = URL;
+                        link.download = "Customer_Service_Benchmark_Report_2025.pdf";
                         document.body.appendChild(link);
                         link.click();
                         document.body.removeChild(link);
@@ -672,27 +343,6 @@
                     }
                 });
             }
-
-            // Modal controls
-            window.openModal = function () {
-                downloadModal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-
-            window.closeModal = function () {
-                downloadModal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-
-            // Close modal on outside click
-            downloadModal.addEventListener('click', (e) => {
-                if (e.target === downloadModal) closeModal();
-            });
-
-            // ESC to close
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') closeModal();
-            });
         });
     </script>
 
