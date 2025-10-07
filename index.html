@@ -236,7 +236,7 @@
         const EMAIL_TEMPLATE_ID = "template_7jmqb59";
         const EMAIL_PUBLIC_KEY = "I64IeI2zG_00GsyoX";
         // Final URL for the PDF download (Opens after successful form submission)
-        const URL = "https://company-assets.freshworks.com/marketing/freshdesk/Customer-Service-Benchmark-Report-2025.pdf?ehash=9e6571886e5fd0569388c1318b784065c0616a831d6c4a390d29a00cfa9090d6";
+        const PDF_DOWNLOAD_URL = "https://leadsbaton.github.io/freshworks-customer-service-benchmark-report-2025/assets/pdf/Customer-Service-Benchmark-Report-2025.pdf";
 
         document.addEventListener('DOMContentLoaded', function () {
             // Initialize EmailJS
@@ -332,14 +332,14 @@
                     try {
                         // Send form data via EmailJS (template_7jmqb59)
                         await emailjs.sendForm(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, heroForm);
-                        showDialog("Success! Your form has been submitted.");
+                        showDialog("Success! Your download will begin shortly.");
 
                         // Reset form
                         heroForm.reset();
 
                         // Trigger Download
                         const link = document.createElement("a");
-                        link.href = URL;
+                        link.href = PDF_DOWNLOAD_URL;
                         link.download = "Customer_Service_Benchmark_Report_2025.pdf";
                         document.body.appendChild(link);
                         link.click();
