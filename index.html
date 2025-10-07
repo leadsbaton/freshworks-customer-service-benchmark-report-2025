@@ -42,7 +42,7 @@
         <img src="assets/img/headerLogoLight.webp" alt="Freshworks Logo" class="h-8 sm:h-10">
     </header>
     <!--  full width -->
-    <section class="w-full bg-white-100 pt-32 pb-16 lg:pt-40 lg:pb-24">
+    <section class="w-full bg-white-100 pt-32 pb-16 lg:pt-40 lg:pb-10">
         <div class="max-w-[1400px] mx-auto ">
             <div class="grid lg:grid-cols-2 gap-0 items-stretch overflow-hidden">
 
@@ -121,15 +121,22 @@
                                 class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-violet-600">
                         </div>
                         <div class="pt-2">
-                            <label for="privacyConsent" class="flex items-start text-xs text-gray-700 leading-relaxed">
+                            <label for="privacyConsent"
+                                class="flex items-center text-xs text-gray-700 leading-relaxed flex-wrap gap-1">
                                 <input type="checkbox" id="privacyConsent" name="privacyConsent" class="mr-2 mt-0.5">
-                                By supplying my contact information, I accept the Freshworks <a
-                                    href="https://www.freshworks.com/terms/" target="_blank"
-                                    class="text-violet-600 hover:underline">Terms of Service</a> and <a
-                                    href="https://www.freshworks.com/privacy/" target="_blank"
-                                    class="text-violet-600 hover:underline">Privacy Notice</a>.
+                                <span>By supplying my contact information, I accept the Freshworks</span>
+                                <a href="https://www.freshworks.com/terms/" target="_blank"
+                                    class="text-violet-600 hover:underline whitespace-nowrap">
+                                    Terms of Service
+                                </a>
+                                <span>and</span>
+                                <a href="https://www.freshworks.com/privacy/" target="_blank"
+                                    class="text-violet-600 hover:underline whitespace-nowrap">
+                                    Privacy Notice
+                                </a>.
                             </label>
                         </div>
+
                         <input type="hidden" name="timestamp" id="timestamp">
 
                         <button type="submit" id="submitBtn"
@@ -142,11 +149,12 @@
         </div>
     </section>
 
-    <section class="py-16 lg:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-12">
+    <section class="bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 text-left lg:text-center">
                 Why you should read this report:
             </h2>
+
 
             <div class="grid md:grid-cols-3 gap-10 text-left">
                 <div class="space-y-4">
